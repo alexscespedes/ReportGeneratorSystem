@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using ReportGenerator;
+
+List<Report> reports = new List<Report>
+{
+    new PdfReport(),
+    new ExcelReport(),
+    new WordReport(),
+};
+
+foreach (var report in reports)
+{
+    report.Generate();
+}
